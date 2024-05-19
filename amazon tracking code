@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script>
+  // Get all Amazon.co.uk links on the page - remove either domain
+  var links = document.querySelectorAll("a[href*='amazon.co.uk/amazon.com']");
+  // Add the query parameter to each link
+  links.forEach(function(link) {
+    var url = new URL(link.href);
+//remove either tracking link
+    url.searchParams.append("tag", "xxxxxx-21/xxxxx-02");
+    link.href = url.toString();
+  });
+</script>
+    </head>
+    <body>
+        <?php echo '<p>Hello World</p>'; ?>
+    </body>
+</html>
